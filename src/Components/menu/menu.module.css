@@ -1,0 +1,11 @@
+/* стили компонента Menu */
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    padding: 0px 50px;
+}

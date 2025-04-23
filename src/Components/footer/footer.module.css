@@ -1,0 +1,8 @@
+/* стили компонента Menu */
+.container {
+    position: absolute;
+    bottom: 0;
+    background-color: #97B3C2;
+    width: -webkit-fill-available;
+    padding: 20px;
+}
