@@ -1,0 +1,5 @@
+/* стили компонента Task */
+.item {
+    padding: 10px 50px;
+    cursor: pointer;
+}

@@ -1,11 +1,9 @@
-/* стили компонента Menu */
-.list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* стили компонента Task */
 .item {
     padding: 0px 50px;
+    color: white;
+}
+.item:hover {
+    color: black;
+    cursor: pointer;
 }

@@ -1,0 +1,15 @@
+/* стили компонента Task */
+.header {
+    text-align: center;
+    color: cornflowerblue;
+}
+.list {
+    flex-direction: column;
+
+    border: 1px solid black;
+    margin: 0px 400px;
+}
+
+.item {
+    padding: 0px 50px;
+}
