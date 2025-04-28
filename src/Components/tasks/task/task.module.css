@@ -1,0 +1,15 @@
+/* стили компонента Task */
+.item {
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+
+    border: 1px solid #c98d21;
+}
+.item:hover {
+    background-color: #a6e83c;
+}
+.text {
+    padding: 10px 10px;
+    margin: 0;
+}

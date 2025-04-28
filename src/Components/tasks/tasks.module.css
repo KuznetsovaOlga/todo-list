@@ -1,15 +1,22 @@
-/* стили компонента Task */
+/* стили компонента Search */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 400px;
+}
 .header {
     text-align: center;
     color: cornflowerblue;
 }
+.text {
+    text-align: center;
+    color: cornflowerblue;
+    padding: 5px 10px;
+}
 .list {
     flex-direction: column;
+    align-items: baseline;
 
-    border: 1px solid black;
-    margin: 0px 400px;
-}
-
-.item {
-    padding: 0px 50px;
+    padding: 0
 }

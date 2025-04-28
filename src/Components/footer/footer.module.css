@@ -1,8 +1,8 @@
-/* стили компонента Task */
+/* стили компонента Search */
 .container {
-    position: absolute;
-    bottom: 0;
-    background-color: #97B3C2;
-    width: -webkit-fill-available;
     padding: 20px;
+
+    background: #597ca2;
+    color: white;
+    text-align: center;
 }
