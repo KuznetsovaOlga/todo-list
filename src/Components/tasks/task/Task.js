@@ -10,7 +10,7 @@ export default function Task({dataTask}) {
             onClick={()=>setIsShowDescription(prevState => !prevState)}
             className={menuStyle.item}
         >
-            <p className={menuStyle.text}>Задача {dataTask.id}</p>
+            <p className={menuStyle.text}>Задача {dataTask.id} {dataTask.name}</p>
             {isShowDescription
                 ? <p className={menuStyle.text}>Детали: {dataTask.description}</p>
                 : null

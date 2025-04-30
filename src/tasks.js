@@ -1,6 +1,7 @@
 export default [
     {
         id: 1,
+        name: "H.Lorem ipsum dolor sit amet.",
         createDate: new Date(2023, 0, 1),
         endDate:  new Date(2023, 0, 2),
         markers: ['покупка'],
@@ -9,6 +10,7 @@ export default [
     },
     {
         id: 2,
+        name: "F.Lorem ipsum dolor sit amet.",
         createDate: new Date(2024, 0, 5),
         endDate:  new Date(2024, 0, 7),
         markers: ['задание'],
@@ -17,6 +19,7 @@ export default [
     },
     {
         id: 3,
+        name: "Z.Lorem ipsum dolor sit amet.",
         createDate: new Date(2025, 0, 1),
         endDate:  new Date(2025, 0, 2),
         markers: ['задание'],
@@ -25,6 +28,7 @@ export default [
     },
     {
         id: 4,
+        name: "X.Lorem ipsum dolor sit amet.",
         createDate: new Date(2025, 0, 1),
         endDate:  new Date(2025, 5, 20),
         markers: ['задание'],
@@ -33,6 +37,7 @@ export default [
     },
     {
         id: 5,
+        name: "L.Lorem ipsum dolor sit amet.",
         createDate: new Date(2025, 2, 25),
         endDate:  new Date(2025, 5, 6),
         markers: ['покупка'],
@@ -41,6 +46,7 @@ export default [
     },
     {
         id: 6,
+        name: "K.Lorem ipsum dolor sit amet.",
         createDate: new Date(2025, 4, 1),
         endDate:  new Date(2025, 5, 30),
         markers: ['задание'],
@@ -49,6 +55,7 @@ export default [
     },
     {
         id: 7,
+        name: "O.Lorem ipsum dolor sit amet.",
         createDate: new Date(2025, 4, 28),
         endDate:  new Date(2025, 6, 28),
         markers: ['покупка'],
@@ -57,6 +64,7 @@ export default [
     },
     {
         id: 8,
+        name: "E.Lorem ipsum dolor sit amet.",
         createDate: new Date(2021, 0, 1),
         endDate:  new Date(2021, 6, 25),
         markers: ['задание'],
