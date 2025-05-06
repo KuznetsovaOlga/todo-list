@@ -1,10 +1,10 @@
 /* стили компонента Task */
 .item {
     margin-bottom: 10px;
-    cursor: pointer;
     width: 100%;
 
     border: 1px solid #c98d21;
+    position: relative;
 }
 .item:hover {
     background-color: #a6e83c;
@@ -12,4 +12,31 @@
 .text {
     padding: 10px 10px;
     margin: 0;
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #0a3395;
+}
+.button {
+    cursor: pointer;
+    margin-left: 10px;
+}
+.detailContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.buttonEdit {
+    margin-right: 10px;
 }

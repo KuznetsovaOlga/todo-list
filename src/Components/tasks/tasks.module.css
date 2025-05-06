@@ -1,4 +1,4 @@
-/* стили компонента Search */
+/* стили компонента Tasks */
 
 .container {
     display: flex;
@@ -22,11 +22,15 @@
 }
 .button {
     background-color: cornflowerblue;
-    border: none;
+    border: 1px solid black;
     color: white;
     padding: 5px;
 
     cursor: pointer;
+}
+.buttonFilter {
+    flex-basis:100%;
+    flex-grow:1;
 }
 .filter {
     display: flex;

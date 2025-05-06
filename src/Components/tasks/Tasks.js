@@ -28,8 +28,14 @@ export default function Tasks() {
         }
     }
 
-    const handleSort = () => {
-        const sortData = copeTaskArray.sort((a, b) => a.description.localeCompare(b.description));
+    const handleSort = (property) => {
+        const sortData = copeTaskArray.sort((a, b) => {
+            if (property === 'participants') {
+                return a[property].length - b[property].length
+            } else {
+                return a[property].localeCompare(b[property])
+            }
+        });
         setTasks(sortData);
     }
 
@@ -39,18 +45,46 @@ export default function Tasks() {
             <div className={tasksStyle.filter}>
                 <button
                     type="button"
-                    className={tasksStyle.button}
-                    onClick={() => handleSort()}
+                    className={`${tasksStyle.button} ${tasksStyle.buttonFilter}`}
+                    onClick={() => handleSort('description')}
                 >
                     Отсортировать по алфавиту
                 </button>
-                <Search
-                    className={tasksStyle.text}
-                    onChangeMarker={(e) => handleChangeMarker(e)}
-                />
+                <button
+                    type="button"
+                    className={`${tasksStyle.button} ${tasksStyle.buttonFilter}`}
+                    onClick={() => handleSort('participants')}
+                >
+                    Отсортировать по кол-ву участников
+                </button>
+                <button
+                    type="button"
+                    className={`${tasksStyle.button} ${tasksStyle.buttonFilter}`}
+                    onClick={() => handleChangeMarker('срочно')}
+                >
+                    Срочные
+                </button>
+                <button
+                    type="button"
+                    className={`${tasksStyle.button} ${tasksStyle.buttonFilter}`}
+                    onClick={() => handleSort('createDate')}
+                >
+                    Отсортировать по дате создания
+                </button>
             </div>
+            <Search
+                className={tasksStyle.text}
+                onChangeMarker={(e) => handleChangeMarker(e)}
+            />
             <ul className={`${commonStyle.common_list} ${tasksStyle.list}`}>
-                {tasks.map(task => <Task key={task.id} dataTask={task}/>)}
+                {tasks.map(task =>
+                    <Task
+                        key={task.id}
+                        tasks={tasks}
+                        dataTask={task}
+                        setTasks={setTasks}
+                    />
+                )}
             </ul>
         </div>
     )

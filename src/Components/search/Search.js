@@ -11,7 +11,7 @@ export default function Search({onChangeMarker, className}) {
     return (
         <input
             type="text"
-            placeholder="покупка или задание"
+            placeholder="Поиск по слову: покупка или задание"
             className={className}
             value={value}
             onChange={handleChangeSearch}
