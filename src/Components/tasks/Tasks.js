@@ -1,42 +1,36 @@
 import tasksStyle from "./tasks.module.css"
-import listTasks from "../../tasks"
 import Task from "./task/Task";
 import commonStyle from "../../assets/styles/commonStyles.module.css";
-import {useState} from "react";
+import {useContext} from "react";
 import Search from "../search/Search";
-
-const filterTask = () => {
-    const currentData = new Date();
-    const list = listTasks.filter(task => task.endDate >= currentData)
-    return list.sort((a, b) => a.endDate - b.endDate);
-}
+import {filterTask, TasksContext} from "../../App";
+import {listTasks as initialTasks} from "../../tasks";
 
 export default function Tasks() {
-    const [tasks, setTasks] = useState(()=>{
-        return filterTask();
-    });
-    const copeTaskArray = JSON.parse(JSON.stringify(tasks));
+    const { listTasks, setListTasks } = useContext(TasksContext) || {};
+
+    const copeTaskArray = JSON.parse(JSON.stringify(listTasks));
 
     const handleChangeMarker = (searchValue) => {
         if (searchValue.length) {
             const newList = copeTaskArray.filter(task => {
-              return task.markers.some(marker => marker.toLowerCase().includes(searchValue.toLowerCase()))
+              return task.markers.some(marker => marker?.toLowerCase().includes(searchValue?.toLowerCase()))
             })
-            setTasks(newList);
+            setListTasks(newList)
         } else {
-            return setTasks(filterTask());
+            setListTasks(filterTask(initialTasks))
         }
     }
 
     const handleSort = (property) => {
         const sortData = copeTaskArray.sort((a, b) => {
             if (property === 'participants') {
-                return a[property].length - b[property].length
+                return a[property]?.length - b[property]?.length
             } else {
                 return a[property].localeCompare(b[property])
             }
         });
-        setTasks(sortData);
+        setListTasks(sortData)
     }
 
     return (
@@ -77,12 +71,10 @@ export default function Tasks() {
                 onChangeMarker={(e) => handleChangeMarker(e)}
             />
             <ul className={`${commonStyle.common_list} ${tasksStyle.list}`}>
-                {tasks.map(task =>
+                {listTasks.map(task =>
                     <Task
                         key={task.id}
-                        tasks={tasks}
                         dataTask={task}
-                        setTasks={setTasks}
                     />
                 )}
             </ul>

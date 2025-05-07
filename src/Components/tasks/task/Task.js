@@ -1,19 +1,22 @@
 import menuStyle from "./task.module.css"
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {ReactComponent as ShowDetail} from "../../../assets/icons/showDetail.svg";
+import {TasksContext} from "../../../App";
 
-export default function Task({dataTask, tasks, setTasks}) {
+export default function Task({dataTask}) {
+    const { listTasks, setListTasks } = useContext(TasksContext) || {};
+
     const [isShowDescription, setIsShowDescription] = useState(false)
     const [isDisable, setIsDisable] = useState(true)
 
     const handleChangeParticipant = ({target}) => {
-        const newArr = tasks.map((task) =>
+        const newArr = listTasks.map((task) =>
         task.id === dataTask.id ? {...task, participants: [target.value]} : task)
-        setTasks(newArr)
+        setListTasks(newArr)
     }
 
     const handleDeleteTask = (idTask) => {
-        setTasks(tasks.filter(task => task.id !== idTask))
+        setListTasks(listTasks.filter(task => task.id !== idTask))
     }
 
     return (

@@ -5,6 +5,7 @@
 
     border: 1px solid #c98d21;
     position: relative;
+    border-radius: 5px;
 }
 .item:hover {
     background-color: #a6e83c;

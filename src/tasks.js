@@ -1,4 +1,4 @@
-export default [
+export const listTasks = [
     {
         id: 1,
         name: "H.Lorem ipsum dolor sit amet.",

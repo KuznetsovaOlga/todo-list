@@ -1,0 +1,40 @@
+.form {
+    text-align: -webkit-center;
+    margin-top: 20px;
+}
+.formBlock {
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid deepskyblue;
+    width: 550px;
+    background-color: darkseagreen;
+}
+.formItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 10px;
+}
+.formItem > input {
+    flex: 1;
+
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.formItem > label {
+    margin-right: 10px;
+}
+.button {
+    margin: 10px;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: medium;
+}
+.button:disabled {
+    background-color: #575d6b;
+}
