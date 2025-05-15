@@ -5,7 +5,6 @@ import {TasksContext} from "../../App";
 const min = 10;
 const max = 100;
 const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-console.log(randomNum);
 
 export default function Form() {
     const { setListTasks } = useContext(TasksContext) || {};

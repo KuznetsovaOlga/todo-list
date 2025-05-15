@@ -1,0 +1,39 @@
+/* стили компонента Game */
+.containerBlock {
+    text-align: center;
+}
+.title {
+    text-align: center;
+}
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 0;
+    justify-content: center;
+}
+.item {
+    list-style: none;
+    padding: 10px;
+    width: 350px;
+    height: 250px;
+    margin: 20px;
+    border: 5px solid #26d3733d;
+    cursor: pointer;
+}
+.itemTitle {
+    font-weight: bold;
+}
+.button {
+    padding: 10px 15px;
+    background-color: #26d3733d;
+    border: 1px solid #26d3733d;
+    color: black;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 5px;
+
+    margin-right: 10px;
+}

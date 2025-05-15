@@ -1,9 +1,12 @@
 import footerStyle from "./footer.module.css"
+import {forwardRef} from "react";
 
-export default function Footer() {
+const Footer = forwardRef((props, ref) => {
     return (
-        <footer className={footerStyle.container}>
-            Подвал сайта
+        <footer ref={ref} className={footerStyle.container}>
+            <p>Подвал сайта</p>
         </footer>
-    )
-}
+    );
+});
+
+export default Footer;

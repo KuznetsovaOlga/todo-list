@@ -3,8 +3,10 @@ import Footer from "./Components/footer/Footer";
 import Header from "./Components/header/Header";
 import Tasks from "./Components/tasks/Tasks";
 import {listTasks as initialTasks} from "./tasks";
-import {createContext, useState} from "react";
+import {createContext, useRef, useState} from "react";
 import Form from "./Components/form/Form";
+import {ReactComponent as ScrollDown} from "./assets/icons/scroll-down.svg";
+import Game from "./Components/game/Game";
 
 export const TasksContext = createContext({
     listTasks: [],
@@ -22,16 +24,38 @@ function App() {
       return filterTask(initialTasks);
   });
 
+  const footerRef = useRef(null)
+
+  const handleScrollDown = () => {
+      if (footerRef.current) {
+          footerRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+
   return (
-      <>
+      <div style={{position:"relative"}}>
           <Header />
           <TasksContext.Provider value={{listTasks, setListTasks}}>
+              <button
+                  onClick={handleScrollDown}
+                  style={{
+                      cursor: "pointer",
+                      backgroundColor:"white",
+                      position:"absolute",
+                      top:"70px",
+                      right:"150px"
+                  }}
+              >
+                  <p>Прокрутить вниз</p>
+                  <ScrollDown width="50" height="50"/>
+              </button>
               <Form/>
               <Tasks />
           </TasksContext.Provider>
           <Banner />
-          <Footer />
-      </>
+          <Game/>
+          <Footer ref={footerRef}/>
+      </div>
   );
 }
 
