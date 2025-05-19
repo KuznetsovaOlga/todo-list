@@ -7,6 +7,7 @@ import {createContext, useRef, useState} from "react";
 import Form from "./Components/form/Form";
 import {ReactComponent as ScrollDown} from "./assets/icons/scroll-down.svg";
 import Game from "./Components/game/Game";
+import Slider from "./Components/slider/Slider";
 
 export const TasksContext = createContext({
     listTasks: [],
@@ -35,6 +36,7 @@ function App() {
   return (
       <div style={{position:"relative"}}>
           <Header />
+          <Slider/>
           <TasksContext.Provider value={{listTasks, setListTasks}}>
               <button
                   onClick={handleScrollDown}
@@ -43,7 +45,8 @@ function App() {
                       backgroundColor:"white",
                       position:"absolute",
                       top:"70px",
-                      right:"150px"
+                      right:"10px",
+                      borderRadius:"10px"
                   }}
               >
                   <p>Прокрутить вниз</p>
