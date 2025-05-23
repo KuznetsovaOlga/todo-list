@@ -3,8 +3,8 @@ import Task from "./task/Task";
 import commonStyle from "../../assets/styles/commonStyles.module.css";
 import {useContext} from "react";
 import Search from "../search/Search";
-import {filterTask, TasksContext} from "../../App";
 import {listTasks as initialTasks} from "../../tasks";
+import {filterTask, TasksContext} from "../../MainApp";
 
 export default function Tasks() {
     const { listTasks, setListTasks } = useContext(TasksContext) || {};
@@ -71,12 +71,16 @@ export default function Tasks() {
                 onChangeMarker={(e) => handleChangeMarker(e)}
             />
             <ul className={`${commonStyle.common_list} ${tasksStyle.list}`}>
-                {listTasks.map(task =>
-                    <Task
-                        key={task.id}
-                        dataTask={task}
-                    />
-                )}
+                {listTasks.map(task => {
+                    if (task.isOpened) {
+                        return (
+                            <Task
+                                key={task.id}
+                                dataTask={task}
+                            />
+                        )}
+                    })
+                }
             </ul>
         </div>
     )

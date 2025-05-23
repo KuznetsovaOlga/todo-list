@@ -1,7 +1,8 @@
 import menuStyle from "./task.module.css"
 import {useContext, useState} from "react";
 import {ReactComponent as ShowDetail} from "../../../assets/icons/showDetail.svg";
-import {TasksContext} from "../../../App";
+import {TasksContext} from "../../../MainApp";
+
 
 export default function Task({dataTask}) {
     const { listTasks, setListTasks } = useContext(TasksContext) || {};
@@ -16,7 +17,9 @@ export default function Task({dataTask}) {
     }
 
     const handleDeleteTask = (idTask) => {
-        setListTasks(listTasks.filter(task => task.id !== idTask))
+        // setListTasks(listTasks.filter(task => task.id !== idTask))
+        setListTasks(prevState => prevState.map((task) =>
+            task.id === dataTask.id ? {...task, isOpened: false} : task))
     }
 
     return (

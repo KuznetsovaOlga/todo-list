@@ -7,6 +7,7 @@ export const listTasks = [
         markers: ['покупка', 'срочно'],
         description: 'Покупка хлеба',
         participants: ['Дима', 'Миша', 'Маша', 'Саша'],
+        isOpened: false,
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ export const listTasks = [
         markers: ['задание'],
         description: 'Продажа машины',
         participants: ['Полина', 'Кристина', 'Маша', 'Аня'],
+        isOpened: false,
     },
     {
         id: 3,
@@ -25,6 +27,7 @@ export const listTasks = [
         markers: ['задание', 'срочно'],
         description: 'Почитать книгу',
         participants: ['Егор', 'Миша', 'Света', 'Паша'],
+        isOpened: true,
     },
     {
         id: 4,
@@ -34,6 +37,7 @@ export const listTasks = [
         markers: ['задание', 'срочно'],
         description: 'Уроки',
         participants: ['Олег', 'Ярослав', 'Валера', 'Саша'],
+        isOpened: true,
     },
     {
         id: 5,
@@ -43,6 +47,7 @@ export const listTasks = [
         markers: ['покупка'],
         description: 'Магазин',
         participants: ['Дима', 'Артем', 'Борис', 'Наташа', 'Наташа'],
+        isOpened: true,
     },
     {
         id: 6,
@@ -52,6 +57,7 @@ export const listTasks = [
         markers: ['задание', 'срочно'],
         description: 'Уборка',
         participants: ['Юра', 'Петя', 'Тая'],
+        isOpened: false,
     },
     {
         id: 7,
@@ -61,6 +67,7 @@ export const listTasks = [
         markers: ['покупка'],
         description: 'Покупка билетов',
         participants: ['Борис', 'Наташа'],
+        isOpened: true,
     },
     {
         id: 8,
@@ -70,5 +77,26 @@ export const listTasks = [
         markers: ['задание'],
         description: 'Приготовить ужин',
         participants: ['Иван', 'Юра', 'Петя', 'Тая'],
+        isOpened: false,
+    },
+    {
+        id: 9,
+        name: "Q.Lorem ipsum dolor sit amet.",
+        createDate: new Date(2025, 4, 28),
+        endDate:  new Date(2025, 6, 28),
+        markers: ['покупка'],
+        description: 'Покупка книги',
+        participants: ['Наташа', 'Наташа'],
+        isOpened: true,
+    },
+    {
+        id: 10,
+        name: "W.Lorem ipsum dolor sit amet.",
+        createDate: new Date(2021, 0, 1),
+        endDate:  new Date(2021, 6, 25),
+        markers: ['задание'],
+        description: 'Приготовить уроки',
+        participants: ['Оля', 'Оля'],
+        isOpened: true,
     },
 ]

@@ -2,8 +2,10 @@
 .item {
     padding: 0px 50px;
     color: white;
+    text-decoration: none;
 }
 .item:hover {
     color: black;
     cursor: pointer;
 }
+

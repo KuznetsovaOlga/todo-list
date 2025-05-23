@@ -1,6 +1,6 @@
 import formStyles from './form.module.css';
 import {useContext, useState} from "react";
-import {TasksContext} from "../../App";
+import {TasksContext} from "../../MainApp";
 
 const min = 10;
 const max = 100;
@@ -34,6 +34,7 @@ export default function Form() {
             id: randomNum,
             createDate: new Date(),
             endDate: new Date(Date.now() + Math.random() * 100),
+            isOpened: true
         }))
     }
 

@@ -5,4 +5,10 @@
     background: #597ca2;
     color: white;
     text-align: center;
+
+    /*position: absolute;*/
+    bottom: 0;
+    width: -webkit-fill-available;
+    margin-bottom: -100px
+
 }

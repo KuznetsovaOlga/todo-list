@@ -1,6 +1,7 @@
 .form {
     text-align: -webkit-center;
-    margin-top: 20px;
+    margin-top: 200px;
+    margin-bottom: 200px;
 }
 .formBlock {
     display: flex;
