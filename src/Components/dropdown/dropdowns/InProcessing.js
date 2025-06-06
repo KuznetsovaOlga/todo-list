@@ -7,7 +7,7 @@ export const loaderDataTodos = async () => {
     return {todos}
 }
 
-export const loaderDataTodosByRequestFilter = async ({request}) => {
+export const loaderDataTodosByRequestFilter = async ({request}) => { // так как в router.js есть эти loader-загрузчики, поэтому здесь в props мы получаем объект request, params(и строки поиска)
     const url = new URL(request.url)
     const todosFilter = url.searchParams.get("todos_filter")
     const todos = await getDataTodos(todosFilter)
@@ -39,10 +39,8 @@ export default function InProcessing({ filterType }) {
                     <li key={task.id}>{task.name}</li>
                 ))}
             </ul>
-
-
             {
-                filterType === "active" && todos.length && (
+                filterType === "active" && (
                     <>
                         <h1>Информация о новых пользователях</h1>
                         <Form>
@@ -53,11 +51,15 @@ export default function InProcessing({ filterType }) {
                                 onChange={(event) => submit(event.currentTarget.form)}
                             />
                         </Form>
-                        <ul>
-                            {todos?.map((item) => (
-                                <li key={item.id}>{item.title}</li>
-                            ))}
-                        </ul>
+                        {
+                            todos.length && (
+                                <ul>
+                                    {todos?.map((item) => (
+                                        <li key={item.id}>{item.todo}</li>
+                                    ))}
+                                </ul>
+                            )
+                        }
                     </>
                 )
             }

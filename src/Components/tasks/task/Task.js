@@ -2,9 +2,11 @@ import menuStyle from "./task.module.css"
 import {useContext, useState} from "react";
 import {ReactComponent as ShowDetail} from "../../../assets/icons/showDetail.svg";
 import {TasksContext} from "../../../MainApp";
+import {useNavigate} from "react-router-dom";
 
 
 export default function Task({dataTask}) {
+    const navigate = useNavigate();
     const { listTasks, setListTasks } = useContext(TasksContext) || {};
 
     const [isShowDescription, setIsShowDescription] = useState(false)
@@ -16,10 +18,14 @@ export default function Task({dataTask}) {
         setListTasks(newArr)
     }
 
-    const handleDeleteTask = (idTask) => {
-        // setListTasks(listTasks.filter(task => task.id !== idTask))
+    const handleDeleteTask = () => {
         setListTasks(prevState => prevState.map((task) =>
             task.id === dataTask.id ? {...task, isOpened: false} : task))
+    }
+
+    const handleUpdateTask = (idTask) => {
+        console.log('idTask', idTask)
+        navigate(`/updateTask/${idTask}/editing`);
     }
 
     return (
@@ -65,11 +71,19 @@ export default function Task({dataTask}) {
                 }
             </div>
 
+            <button
+                type="button"
+                className={`${menuStyle.button} ${menuStyle.update}`}
+                onClick={() => handleUpdateTask(dataTask.id)}
+            >
+                Редактировать задачу
+            </button>
+
 
             <button
                 type="button"
                 className={`${menuStyle.button} ${menuStyle.close}`}
-                onClick={()=> handleDeleteTask(dataTask.id)}
+                onClick={() => handleDeleteTask()}
             >
                 X
             </button>

@@ -7,7 +7,8 @@ import InProcessing, {
 import FinishedTasks from "../Components/dropdown/dropdowns/FinishedTasks";
 import App from "../Components/app/App";
 import OpenedTasks from "../Components/dropdown/OpenedTasks";
-import Form from "../Components/form/Form";
+import CreateTask, {createTaskAction} from "../Components/formForTask/CreateTask";
+import UpdateTask, {updateTaskAction} from "../Components/updateTask/UpdateTask";
 
 const routers = [
     {
@@ -39,8 +40,14 @@ const routers = [
                 element: <FinishedTasks/>
             },
             {
-                path: "/form",
-                element: <Form/>
+                path: "/createTask",
+                element: <CreateTask/>,
+                action: createTaskAction
+            },
+            {
+                path: "/updateTask/:taskId/editing",
+                element: <UpdateTask/>,
+                action: updateTaskAction
             }
         ]
     }

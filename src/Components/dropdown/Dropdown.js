@@ -8,7 +8,7 @@ export default function Dropdown({onClick}) {
                 <nav className={dropdownStyle.block}>
                     <NavLink to="/opened" className={dropdownStyle.blockItem} onClick={onClick}>Открытые задачи</NavLink>
                     <NavLink to="/finished" className={dropdownStyle.blockItem}>Завершенные задачи</NavLink>
-                    <NavLink to="/form" className={dropdownStyle.blockItem}>Добавить задачи +</NavLink>
+                    <NavLink to="/createTask" className={dropdownStyle.blockItem}>Добавить задачи +</NavLink>
                 </nav>
             </div>
         </div>
