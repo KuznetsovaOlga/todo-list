@@ -1,0 +1,62 @@
+/* стили компонента cartStyle */
+
+.picture {
+    height: 80%;
+}
+
+.caption {
+    background-color: #97B3C2;
+    color: #394053;
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+}
+.list {
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: smaller;
+    color: gray;
+}
+.list_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: anchor-center;
+}
+.list_info {
+    color: black;
+    margin-bottom: 5px;
+    width: max-content;
+    margin-top: 0;
+}
+.result {
+    color: red;
+    font-weight: bold;
+    font-size: large;
+    text-align: end;
+}
+.wrap {
+    display: flex;
+    flex-direction: column;
+
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.btn {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: cadetblue;
+    color: white;
+    border: 5px solid #afcbcb;
+    width: max-content;
+    border-radius: 5px;
+}
+.btn:hover {
+    background: #45a049;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}

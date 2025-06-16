@@ -9,6 +9,7 @@ import App from "../Components/app/App";
 import OpenedTasks from "../Components/dropdown/OpenedTasks";
 import CreateTask, {createTaskAction} from "../Components/formForTask/CreateTask";
 import UpdateTask, {updateTaskAction} from "../Components/updateTask/UpdateTask";
+import Shop from "../Components/products/Shop";
 
 const routers = [
     {
@@ -18,6 +19,16 @@ const routers = [
             {
                 index: true,
                 element: <App/>,
+            },
+            {
+                path: "shop",
+                element: <Shop/>,
+                children: [
+                    {
+                        path: "cart",
+                        element: <Shop/>,
+                    }
+                ]
             },
             {
                 path: "/opened",

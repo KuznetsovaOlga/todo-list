@@ -5,9 +5,9 @@ import {NavLink} from "react-router-dom";
 export default function Menu({onClick}) {
     return (
         <ul className={commonStyle.common_list}>
-            <NavLink to="/" className={menuStyle.item} >Главная</NavLink>
+            <NavLink to="/" className={menuStyle.item}>Главная</NavLink>
             <li className={menuStyle.item} onClick={onClick}>Задачи</li>
-            <li className={menuStyle.item}>Новости</li>
+            <NavLink to="/shop" className={menuStyle.item}>Магазин</NavLink>
             <li className={menuStyle.item}>Погода</li>
         </ul>
     )
